@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+    <userDetails>
+        <name>Ayush Goyal</name>
+        <userId>quizAdmin000</userId>
+        <quizs>
+           <quiz>
+                <title>Sample</title>
+                <quizId>quiz000</quizId>
+            </quiz>
+        </quizs>
+    </userDetails>

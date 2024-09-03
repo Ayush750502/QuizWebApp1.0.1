@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <script src="jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="launch/bootstrap-4.6.2-dist/css/bootstrap.css">
+</head>
+<body>
+    <style>
+        input {
+            border-style: solid;
+            border-color: rgba(169, 169, 169, 0.352);
+        }
+        .o{
+            border-radius: 20px;
+            width: 30px;
+            margin : 10px;
+            background-color: white;
+            border-color: rgba(255, 255, 255, 0.322);
+            border-width: 3px;
+            font-family:cursive;
+        }
+        li{
+            margin: 0%;
+            padding-right: 0%;
+        }
+        .launch button{
+            border-radius: 25px;
+            background-color:crimson;
+            border-color:crimson;
+            border-style: solid;
+            color: white;
+            font-size: xx-large;
+        }
+        .submit{
+            border-radius: 25px;
+            background-color: dodgerblue;
+            border-color: dodgerblue;
+            border-style: solid;
+            color: white;
+        }
+        .top{
+            background-color: rgba(38, 146, 255, 0.806);
+            padding-left: 20px;
+            padding-bottom: 10px;
+        }
+        .top input{
+            color: white;
+            background-color: rgba(30, 143, 255, 0);
+            border-color: rgba(30, 143, 255, 0);
+        }
+        .top #QuizId{
+            font-size: 0;
+            color: rgba(30, 143, 255, 0);
+            background-color: rgba(30, 143, 255, 0);
+            border-color: rgba(30, 143, 255, 0);
+            padding: 0px;
+            margin: 0px;
+        }
+        .top #userId{
+            font-size: 0;
+            color: rgba(30, 143, 255, 0);
+            background-color: rgba(30, 143, 255, 0);
+            border-color: rgba(30, 143, 255, 0);
+            padding: 0px;
+            margin: 0px;
+        }
+        #QuizTitle{
+            font-size: 250%;
+            width: 45%;
+        }
+        #QuizBy{
+            font-size: 175%;
+            margin-left: 25px;
+            width:45%;
+        }
+        .row input{
+            border-color: rgb(255, 255, 255);
+            border-bottom-color: rgba(128, 128, 128, 0.311)
+        }
+        .count{
+            color: rgb(0, 0, 0);
+            border-color: white;
+        }
+    </style>
+    <script src="quizfetch.js"></script>
+    <script src="functions.js"></script>
+    <script>
+        
+        $(document).ready(function(){
+            quizFetch();
+            $(".save").attr( "action" , "save.php");
+            let link = "launch/launch.php?quizId="+config[1];
+            let html = "<a href='"+link+"'><button type='button'>Launch<button></a>";
+            $(".launch").html("");
+            $(".launch").append("<a href='"+link+"'>");
+            $(".launch a").append("<button type='button' >");
+            $(".launch a button").append("Launch");
+            $("input:radio").click(function(){
+                let v = $(this).val();
+                let name = $(this).attr("name");
+                alert("Val : "+v+" name = "+name);
+            });
+
+        });
+    </script>
+    <main>
+        <form class="save" action="save.php">
+            <div class="top">
+                <input type="text" name="QuizId" id="QuizId" value="" onchange='takeInput("QuizId")'><br>
+                <input type="text" name="QuizTitle" id="QuizTitle" value="" onchange='takeInput("QuizTitle")'><br>
+                <input type="text" name="userId" id="userId" value="" onchange='takeInput("userId")'><br>
+                <input type="text" name="QuizBy" id="QuizBy" value="" onchange='takeInput("QuizBy")'>
+            </div><br><br>
+            <p align="center"><label class="count">Questions =</lable><input name="count" class="count" value="1"></p>
+            <br>
+            <div  class="load" align="center">
+            </div>
+            <div align="center"><button class="submit" type="submit">Save</button></div>
+        </form>
+        <br>
+        <div class="launch" align="center"><a href="launch/launch.php"><button type="button">Launch</button></a></div>
+    </main>
+</body>
+</html>

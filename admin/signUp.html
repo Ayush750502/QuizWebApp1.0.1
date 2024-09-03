@@ -1,0 +1,64 @@
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Register</title>
+	<link rel="stylesheet" href="report/bootstrap-4.6.2-dist/css/bootstrap.css">
+	<link rel="icon" type="icon" href="media/favicon.ico">
+</head>
+<body>
+	<style>
+		.login{
+			background-color: rgba(226, 14, 10, 0.547);
+			border-radius: 5px;
+		}
+		.form-col{
+			padding-right: 10px;
+		}
+		input{
+			width: 50%;
+		}
+		a{
+			color: white;
+		}
+		label{
+			color: rgb(255, 255, 255);
+			
+		}
+		.txt{
+			font-size: 45px;
+		}
+	</style>
+	<br><br><br>
+	<center>
+	<div class="row form-col">
+		<div class="col-sm-6">
+			<img src="Quiz.jpeg" alt="<h1>Quiz</h1>">
+		</div>
+		<div class="col-sm-6">
+			<form class="shadow-lg login" action="register.php" >
+				<div class="form-group">
+					<h1 class="text-danger">Register</h1>
+				</div><br>
+				<div class="form-group-control">
+					<label for="Name" style="font-size: larger;"><b>Name  :</b></label>
+					<input name="Name" type="text" alt="UserId" placeholder="user's name">
+				</div><br>
+                <div class="form-group-control">
+					<label for="email" style="font-size: larger;"><b>Email  :</b></label>
+					<input name="email" type="text" alt="email@email.com" placeholder="user's email">
+				</div><br>
+				<div class="form-group-control">
+					<label for="password" style="font-size: larger;" ><b>Password :</b></label> 
+					<input name="passcode"  type="password" placeholder="password">
+				</div><br>
+				<div class="form-group-control">
+					<button type="submit" class="btn btn-danger" type="submit">Register</button>
+				</div><br>
+			</form>
+		</div>
+	</div><br>
+	</center>
+</body>
+</html>

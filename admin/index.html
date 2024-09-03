@@ -1,0 +1,68 @@
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login</title>
+	<link rel="stylesheet" href="report/bootstrap-4.6.2-dist/css/bootstrap.css">
+	<link rel="icon" type="icon" href="media/favicon.ico">
+</head>
+<body>
+	<style>
+		.login{
+			background-color: rgba(10, 79, 226, 0.547);
+			border-radius: 5px;
+			font-size: 25px;
+			margin-right: 55px;
+		}
+		.form-col{
+			padding-right: 10px;
+			margin-top: 55px;
+		}
+		input{
+			width: 50%;
+		}
+		a{
+			color: white;
+		}
+		label{
+			color: rgb(255, 255, 255);
+			
+		}
+		.txt{
+			font-size: 50px;
+		}
+		img{
+			margin-top: 75px;
+			margin-left: 105px;
+		}
+	</style>
+	<br><br><br>
+	<center>
+	<div class="row form-col">
+		<div class="col-sm-6">
+			<img src="Quiz.jpeg" alt="<h1>Quiz</h1>">
+		</div>
+		<div class="col-sm-6">
+			<form class="shadow-lg login" action="Login.php" >
+				<div class="form-group">
+					<h1 class="text-primary txt">Login</h1>
+				</div><br>
+				<div class="form-group-control">
+					<label for="UserId" style="font-size: larger;"><b>UserId  :</b></label>
+					<input name="UserId" type="text" alt="UserId" placeholder="user's id">
+				</div><br>
+				<div class="form-group-control">
+					<label for="password" style="font-size: larger;" ><b>Password :</b></label> 
+					<input name="passcode"  type="password" placeholder="password">
+				</div><br>
+				<div class="form-group-control">
+					<button type="submit" class="btn btn-primary" type="Login">Login</button>
+					<br><br><a href="signUp.html">Sign Up</a>
+				</div><br>
+			</form>
+		</div>
+	</div><br>
+	</center>
+</body>
+</html>

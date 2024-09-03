@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+    <Quiz>
+        <quizDetails>
+            <Title>Sample</Title>
+            <By>-Ayush Goyal</By>
+        </quizDetails>
+        <Questions>
+            <Question>Question1</Question>
+            <options>
+            
+                <option>option1</option>
+            
+                <option>option2</option>
+            
+                <option></option>
+            
+                <option></option>
+            
+                <option></option>
+            
+            </options>
+        </Questions>
+        </Quiz>

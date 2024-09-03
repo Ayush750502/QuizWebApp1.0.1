@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal</title>
+    <script src="QuizEdit/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="report/bootstrap-4.6.2-dist/css/bootstrap.css">
+</head>
+<body>
+    <style>
+        .quizOptions{
+            width:60%;
+            padding:20%;
+        }
+        .new{
+            color: rgba(255, 0, 0, 0.68);
+            margin-top: 10px;
+        }
+        tr{
+            border-style:solid;
+            border-color:rgb(255, 255, 255);
+            border-bottom-color: rgba(128, 128, 128, 0.154);
+            border-radius: 50px;
+            padding-bottom: 2%;
+        }
+        .userName{
+            background-color: rgba(2, 86, 255, 0.597);
+            padding-left: 3%;
+            padding-bottom: 2%;
+            color: white;
+            margin-bottom: 25px;
+        }
+        th{
+            background-color: rgba(69, 131, 255, 0.96);
+            color : white;
+        }
+    </style>
+    <script>
+        function load(){
+            console.log("function load is called"); 
+            $.ajax({
+                url:"userDetails.xml",
+                method : "get",
+                dataType:"xml",
+                error: function(){
+                    alert("Can't load the user's details");
+                },
+                success:function(result){
+                    console.log("xml file is fetched successfully!");
+                    let name = $(result).find("userDetails name").text();
+                    console.log("User name : "+name);
+                    let userId = $(result).find("userDetails userId").text();
+                    console.log(" UserId : "+userId);
+                    $(".userName").html("-"+name);
+                    $(result).find("userDetails quizs quiz").each(function(){
+                        let title = $(this).find("title").text();
+                        let id = $(this).find("quizId").text();
+                        console.log("   Title : "+title);
+                        $(".page .quizOptions").append("<tr><td><a href='loadQuiz.php?id="+id+"&name="+name+"&title="+title+"&userId="+userId+"'>"+title+"</a></td><td> <a href='report/index.php?quizId="+id+"'> Report</a></td></tr>");
+                    });
+                    
+                    $(".page .quizOptions").append("<a class= 'new btn btn-light' href='loadQuiz.php?id=NULL&name="+name+"&title=New_Quiz&userId="+userId+"'>Create New Quiz</a><br>");
+                }
+            });
+        }
+        $(document).ready(function(){
+            console.log("page is in ready state!");
+            load();
+            
+        });
+    </script>
+    <main>
+        <div class="page">
+            <h2 class="userName"></h2>
+            <center>
+            <table class="quizOptions" align="center">
+                <tr>
+                    <th align="left">
+                        Quiz Titles
+                    </th>
+                    <th>
+                        Generate
+                        Report
+                    </th>
+                </tr>
+            </table>
+            </center>
+        </div>
+    </main>
+</body>
+</html>
